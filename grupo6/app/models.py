@@ -124,12 +124,6 @@
 
 
 
-
-
-
-
-
-
 class Entrada_Vehiculo(models.Model):
     documento = models.IntegerField()
     fecha_hora_entrada = models.DateTimeField()
