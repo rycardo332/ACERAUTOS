@@ -1,4 +1,134 @@
-from django.db import models
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Entrada_Vehiculo(models.Model):
     documento = models.IntegerField()
@@ -14,7 +144,7 @@ class Entrada_Vehiculo(models.Model):
         verbose_name_plural = "Entradas de Vehículos"
 
 class Salida_Vehiculo(models.Model):
-    entrada = models.ForeignKey(Entrada_Vehiculo, on_delete=models.CASCADE)
+    entrada = models.ForeignKey('Entrada_Vehiculo', on_delete=models.CASCADE)
     fecha_hora_salida = models.DateTimeField()
     total_a_pagar = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -32,7 +162,7 @@ class Servicio(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     documento = models.IntegerField()
 
-    entrada = models.ForeignKey(Entrada_Vehiculo, on_delete=models.CASCADE)
+    entrada = models.ForeignKey('Entrada_Vehiculo', on_delete=models.CASCADE)
     insumo = models.ForeignKey('Insumos', on_delete=models.SET_NULL, null=True)
     usuario = models.ForeignKey('Usuario', on_delete=models.SET_NULL, null=True)
     tipo_servicio = models.ForeignKey('TipoServicio', on_delete=models.CASCADE)
