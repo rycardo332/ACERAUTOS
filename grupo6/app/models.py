@@ -1,3 +1,83 @@
 from django.db import models
 
 # Create your models here.
+
+class User(models.Model):
+    nombre = models.CharField(max_length=100)
+    rol = models.CharField(max_length=45)
+    contrasena = models.CharField(max_length=45)
+    telefono = models.CharField(max_length=45)
+    email = models.CharField(max_length=45,unique=True)
+    direccion = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.nombre
+    
+    class Meta:
+        verbose_name = "User"
+        verbose_name_plural = "Users"
+        db_table = "Usuario"
+
+
+class Producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10,decimal_places=2)
+    existencia = models.IntegerField()
+    
+    def __str__(self):
+        return self.nombre
+    
+    class Meta:
+        verbose_name = "Producto"
+        verbose_name_plural = "Productos"
+        db_table = "Producto"
+
+
+class Vehiculo(models.Model):
+    tipo_vehiculo = models.CharField(max_length=100)
+    placa = models.CharField(max_length=6)
+    marca = models.CharField(max_length=100)
+    modelo = models.CharField(max_length=100)
+    anio = models.DateField()
+    kilometraje = models.IntegerField()
+    documento = models.CharField(max_length=10)
+    
+    def __str__(self):
+        return self.marca , self.modelo
+    
+    class Meta:
+        verbose_name = "Vehiculo"
+        verbose_name_plural = "Vehiculos"
+        db_table = "Vehiculo"
+
+
+class insumo(models.Model):
+    nombre = models.CharField(max_length=100)
+    cantidad = models.IntegerField()
+    precio_unitario = models.DecimalField(max_digits=10,decimal_places=2)
+    
+    def _str__(self):
+        return self.nombre, self.precio_unitario
+    
+    class Meta:
+        verbose_name = "insumo"
+        verbose_name_plural = "insumos"
+        db_table = "insumo"
+        
+class tipo_servicio(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=100)
+    categoria = models.CharField(max_length=100)
+    duracion_estimada = models.DateField()
+    estado = models.BooleanField(default= True)
+    
+    def __str__(self):
+        return self.nombre
+    
+    class Meta:
+        verbose_name = "tipo_servicio"
+        verbose_name_plural = "tipo_servicios"
+        db_table = "tipo_servicio"
+    
+        
