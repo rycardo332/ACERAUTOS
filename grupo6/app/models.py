@@ -82,10 +82,6 @@ class tipo_servicio(models.Model):
     
         
 
-
-
-
-
 class GestionNotificacion(models.Model):
     id_notificacion = models.AutoField(primary_key=True)
     mensaje = models.CharField(max_length=45)
@@ -124,10 +120,6 @@ class Compra(models.Model):
         verbose_name = "Compra"
         verbose_name_plural = "Compras"
         db_table = "compra"
-
-
-
-
 
 
 
@@ -175,123 +167,6 @@ class Servicio(models.Model):
         db_table = "servicios"
         verbose_name = "Servicio"
         verbose_name_plural = "Servicios"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
